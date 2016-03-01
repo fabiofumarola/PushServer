@@ -120,7 +120,7 @@ public class APNSender implements Managed {
     KeyPair keyPair = (KeyPair) reader.readObject();
 
     KeyStore keyStore = KeyStore.getInstance("pkcs12");
-    keyStore.load(null);
+    keyStore.load(null, "SuperCazzola".toCharArray());
     keyStore.setEntry("apn",
                       new KeyStore.PrivateKeyEntry(keyPair.getPrivate(), certificateChain),
                       new KeyStore.PasswordProtection("insecure".toCharArray()));
